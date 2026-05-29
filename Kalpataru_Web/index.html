@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalpataru Atta Mill | Pure Spices & Authentic Taste</title>
+    
+    <meta name="description" content="Kalpataru Atta Mill provides 100% pure and fresh spices directly from the mill. Premium turmeric, chilli, jeera and dhaniya powders in Siliguri.">
+    <meta name="keywords" content="Kalpataru Atta Mill, pure spices, turmeric powder, chilli powder, jeera powder, dhaniya powder, Siliguri spices">
+    <meta name="author" content="Kalpataru Atta Mill">
+    <meta property="og:title" content="Kalpataru Atta Mill | Pure Spices">
+    <meta property="og:description" content="Traditional slow-ground spices with authentic aroma and purity.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="banner.jpg">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=500;600;700&family=Poppins:wght=300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- GLOBAL VARIABLES & RESET --- */
+        :root {
+            --primary: #C42A1C; 
+            --secondary: #E86C00; 
+            --dark-green: #1B5E20; 
+            --bg-light: #fffdf7;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-color: #e5e5e5;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+        .text-center { text-align: center; }
+        .section-title { font-size: 2.5rem; color: var(--dark-green); margin-bottom: 15px; }
+        .section-subtitle { font-size: 1.1rem; color: var(--text-light); margin-bottom: 50px; }
+        
+        /* --- BUTTONS --- */
+        .btn { padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 500; display: inline-block; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 15px rgba(196, 42, 28, 0.3); }
+        .btn-primary:hover { background: #a52115; transform: translateY(-3px); }
+        .btn-outline { border: 2px solid var(--dark-green); color: var(--dark-green); background: transparent; }
+        .btn-outline:hover { background: var(--dark-green); color: #fff; }
+        .whatsapp-btn { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(37,211,102,0.3); transition: 0.3s; }
+        .whatsapp-btn:hover { background: #128C7E; transform: translateY(-3px); }
+
+        /* --- NAVBAR --- */
+        .navbar { background: #fff; padding: 10px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; position: relative; }
+        .logo { max-height: 70px; width: auto; display: block; }
+        .nav-links { display: flex; gap: 25px; list-style: none; transition: 0.3s ease; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--secondary); }
+        .mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(255,253,247,0.88), rgba(255,238,217,0.92)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-badge { display: inline-block; background: rgba(232, 108, 0, 0.1); color: var(--secondary); padding: 8px 20px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; margin-bottom: 20px; }
+        .hero-title { font-size: 3.8rem; line-height: 1.2; margin-bottom: 20px; color: var(--dark-green); }
+        .hero-title span { color: var(--primary); }
+        .hero-desc { font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto 40px; }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+        /* --- MARQUEE --- */
+        .marquee-container { background: var(--dark-green); padding: 12px 0; overflow: hidden; white-space: nowrap; color: white; }
+        .marquee-text { display: inline-block; font-weight: 500; letter-spacing: 2px; font-size: 0.9rem; animation: marquee 25s linear infinite; }
+        .marquee-text span { margin: 0 30px; color: var(--secondary); }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* --- STATS SECTION --- */
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; margin-bottom: 20px; position: relative; z-index: 10;}
+        .stat-card { background: #fff; padding: 30px 20px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 1px solid #f1ebd9; }
+        .stat-number { font-size: 2.2rem; font-weight: 700; color: var(--secondary); font-family: 'Playfair Display', serif; }
+        .stat-text { font-size: 0.9rem; color: var(--text-light); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+
+        /* --- TRUST BADGES --- */
+        .trust-section { padding: 20px 0 50px; }
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+        .trust-item { background: white; padding: 25px; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; }
+        .trust-item i { font-size: 2rem; color: var(--secondary); margin-bottom: 10px; }
+        .trust-item p { font-weight: 600; font-size: 0.95rem; }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-img { width: 100%; height: 400px; border-radius: 15px; object-fit: cover; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .about-content h2 { font-size: 2.5rem; color: var(--dark-green); margin-bottom: 20px; }
+        .about-list { list-style: none; margin-top: 25px; }
+        .about-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 1.05rem; }
+        .about-list i { color: var(--primary); font-size: 1.2rem; }
+
+        /* --- PRODUCTS SECTION & ANIMATIONS --- */
+        .products-bg { background-color: #fafafa; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .product-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.4s; text-align: center; padding: 25px 15px; border: 1px solid var(--border-color); }
+        .product-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.12); border-color: var(--secondary); }
+        
+        .spice-animation-wrapper { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; transition: 0.4s; position: relative; }
+        .spice-animation-wrapper::after { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 2px dashed rgba(0,0,0,0.1); opacity: 0.8; animation: rotateCircle 12s linear infinite; }
+        
+        .spice-animation-wrapper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; z-index: 2; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        
+        .turmeric-anim { background: #fff9e6; }
+        .product-card:hover .turmeric-anim { transform: scale(1.05); }
+        
+        .chilli-anim { background: #ffebee; }
+        .product-card:hover .chilli-anim { animation: activeShake 0.5s infinite alternate ease-in-out; }
+        
+        .jeera-anim { background: #f5f5dc; }
+        .product-card:hover .jeera-anim img { animation: rotateFan 8s infinite linear; }
+        
+        .dhaniya-anim { background: #e8f5e9; }
+        .product-card:hover .dhaniya-anim { animation: floatEffect 2s infinite ease-in-out; }
+
+        @keyframes rotateCircle { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes activeShake { 0% { transform: rotate(-3deg); } 100% { transform: rotate(3deg); } }
+        @keyframes rotateFan { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes floatEffect { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        
+        .product-info { padding: 5px 10px 10px; }
+        .product-title { font-size: 1.4rem; margin-bottom: 10px; color: var(--dark-green); }
+        .product-desc { font-size: 0.9rem; color: var(--text-light); margin-bottom: 15px; height: 65px; overflow: hidden; }
+        .product-weights { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        .weight-badge { font-size: 0.8rem; padding: 4px 10px; background: #f0f0f0; border-radius: 4px; font-weight: 500; }
+
+        /* --- WHY CHOOSE US --- */
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .why-card { display: flex; gap: 20px; align-items: flex-start; padding: 25px; background: #fff; border-radius: 12px; border: 1px solid var(--border-color); }
+        .why-icon { width: 60px; height: 60px; border-radius: 50%; background: rgba(27, 94, 32, 0.05); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--dark-green); flex-shrink: 0; }
+        .why-content h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--dark-green); }
+        .why-content p { font-size: 0.9rem; color: var(--text-light); }
+
+        /* --- HOW TO ORDER / STEPS --- */
+        .steps-bg { background-color: var(--dark-green); color: white; }
+        .steps-bg .section-title, .steps-bg .section-subtitle { color: white; }
+        .steps-bg .section-subtitle { opacity: 0.8; }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
+        .step-circle { width: 80px; height: 80px; background: var(--secondary); color: white; font-size: 2rem; font-weight: bold; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'Playfair Display', serif; }
+        .step-title { font-size: 1.3rem; margin-bottom: 10px; }
+        .step-desc { font-size: 0.95rem; opacity: 0.8; }
+
+        /* --- TESTIMONIALS --- */
+        .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .review-card { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .stars { color: #FFD700; margin-bottom: 15px; font-size: 1.1rem; }
+        .review-text { font-style: italic; color: var(--text-light); margin-bottom: 20px; font-size: 0.95rem; }
+        .reviewer { font-weight: 600; color: var(--dark-green); }
+
+        /* --- FAQ SECTION --- */
+        .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        .faq-item { background: #fff; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; }
+        .faq-q { font-weight: 600; color: var(--dark-green); margin-bottom: 10px; display: flex; gap: 10px; }
+        .faq-q i { color: var(--secondary); margin-top: 3px; }
+        .faq-a { font-size: 0.95rem; color: var(--text-light); padding-left: 25px; }
+
+        /* --- FOOTER --- */
+        .footer { background: #111; color: #fff; padding: 80px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+        .footer-logo { max-height: 60px; width: auto; margin-bottom: 20px; display: block; }
+        .footer-desc { color: #aaa; font-size: 0.95rem; margin-bottom: 25px; max-width: 300px; }
+        .footer-title { font-size: 1.2rem; margin-bottom: 25px; color: #fff; position: relative; padding-bottom: 10px; }
+        .footer-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background: var(--secondary); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #aaa; text-decoration: none; transition: 0.3s; cursor: pointer; }
+        .footer-links a:hover { color: var(--secondary); padding-left: 5px; }
+        .contact-info p { color: #aaa; margin-bottom: 15px; display: flex; gap: 15px; align-items: flex-start; }
+        .contact-info i { color: var(--secondary); margin-top: 5px; }
+        .contact-info a { color: #aaa; text-decoration: none; transition: 0.3s; }
+        .contact-info a:hover { color: var(--secondary); }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a { width: 40px; height: 40px; border-radius: 50%; background: #222; color: #fff; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; }
+        .social-links a:hover { background: var(--secondary); transform: translateY(-3px); }
+        
+        .footer-logo-center { text-align: center; margin: 20px 0 10px; }
+        .footer-logo-center img { max-height: 50px; width: auto; display: inline-block; }
+        .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; color: #777; font-size: 0.9rem; }
+
+        /* --- SCROLL REVEAL ANIMATION --- */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- FLOATING WHATSAPP BUTTON --- */
+        .floating-whatsapp { position: fixed; right: 20px; bottom: 20px; width: 65px; height: 65px; background: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; z-index: 999; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: 0.3s; animation: pulseWhatsapp 2s infinite; }
+        .floating-whatsapp:hover { transform: scale(1.08); background: #128C7E; color: white; }
+        @keyframes pulseWhatsapp { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+
+        /* --- MODAL --- */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
+        .modal-content { background: #fff; margin: 5% auto; padding: 40px; border-radius: 12px; width: 90%; max-width: 700px; position: relative; line-height: 1.6; max-height: 85vh; overflow-y: auto; }
+        .close-btn { position: absolute; right: 25px; top: 20px; font-size: 32px; cursor: pointer; color: #999; transition: 0.3s; }
+        .close-btn:hover { color: var(--primary); }
+        .modal-body h2 { color: var(--dark-green); margin-bottom: 20px; font-size: 2rem; border-bottom: 2px solid #fff9e6; padding-bottom: 10px; }
+        .modal-body h4 { color: var(--secondary); margin: 20px 0 5px; font-size: 1.2rem; }
+        .modal-body p { font-size: 0.95rem; color: #444; margin-bottom: 15px; }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 3rem; }
+            .about-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .steps-grid, .review-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); margin-top: 20px; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background: white; padding: 25px; gap: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+            .nav-links.show-menu { display: flex; }
+            .mobile-menu-btn { display: block; cursor: pointer; }
+            .hero { padding: 80px 0; }
+            .hero-title { font-size: 2.2rem; }
+            .section-padding { padding: 50px 0; }
+            .floating-whatsapp { width: 55px; height: 55px; font-size: 26px; right: 15px; bottom: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#"><img loading="lazy" src="kalpataru-logo.png" alt="Kalpataru Logo" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Our Spices</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <i class="fa-solid fa-bars mobile-menu-btn"></i>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge"><i class="fa-solid fa-leaf"></i> 100% Pure & Unadulterated</div>
+            <h1 class="hero-title">Premium Spices.<br><span>Authentic Taste.</span></h1>
+            <p class="hero-desc">Direct from Kalpataru Atta Mill. We preserve the traditional aroma, vibrant colors, and natural oils through our specialized slow-grinding process.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/919474090441?text=Hello! I want to order fresh spices." target="_blank" class="whatsapp-btn">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Order on WhatsApp
+                </a>
+                <a href="#products" class="btn btn-outline">Explore Products</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee-text">
+            KALPATARU ATTA MILL <span>•</span> ZERO ARTIFICIAL COLORS <span>•</span> TRADITIONAL SLOW GRINDING <span>•</span> 100% PURE SPICES <span>•</span> HYGIENICALLY PACKED <span>•</span> KALPATARU ATTA MILL <span>•</span> ZERO ARTIFICIAL COLORS <span>•</span> TRADITIONAL SLOW GRINDING 
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <div class="stat-number">100%</div>
+                <div class="stat-text">Pure & Organic</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-number">0%</div>
+                <div class="stat-text">Adulteration</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-number">Fresh</div>
+                <div class="stat-text">Mill to Kitchen</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-number">FSSAI</div>
+                <div class="stat-text">Certified Quality</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="trust-section reveal">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <i class="fa-solid fa-certificate"></i>
+                    <p>FSSAI Certified</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <p>100% Pure</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <p>Fresh Delivery</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                    <p>UPI Accepted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding reveal">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=600" alt="Kalpataru Mill Spices" class="about-img">
+                </div>
+                <div class="about-content">
+                    <h3 style="color: var(--secondary); font-family: 'Poppins', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;">Our Heritage</h3>
+                    <h2>For Those Who Know Real Spice.</h2>
+                    <p style="color: var(--text-light); font-size: 1.05rem; margin-bottom: 20px;">Since 1980 at Kalpataru Atta Mill, we believe that the soul of Indian cooking lies in the purity of its spices. Located in Siliguri, we bypass middlemen and commercial shortcuts to bring you spices exactly as nature intended.</p>
+                    <p style="color: var(--text-light); font-size: 1.05rem;">We use traditional slow-grinding (Chakki) methods that ensure the natural essential oils and aromas of the spices are locked in, never burnt away by high-speed commercial machines.</p>
+                    
+                    <ul class="about-list">
+                        <li><i class="fa-solid fa-check-circle"></i> Hand-picked raw ingredients from trusted farmers.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Slow cold-grinding technology.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> No added starch, brick powder, or artificial dyes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section-padding products-bg reveal">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Premium Range</h2>
+                <p class="section-subtitle">Freshly milled, hygienically packed, and ready for your kitchen.</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="spice-animation-wrapper turmeric-anim">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1615485925600-97237c4ff1cb?auto=format&fit=crop&w=300&q=80" alt="Turmeric Powder">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Turmeric Powder</h3>
+                        <p class="product-desc">Rich in natural curcumin. Vibrant yellow color with zero artificial dyes. Perfect for immunity and authentic cooking.</p>
+                        <div class="product-weights">
+                            <span class="weight-badge">100g</span>
+                            <span class="weight-badge">500g</span>
+                            <span class="weight-badge">1kg</span>
+                        </div>
+                        <a href="https://wa.me/919474090441?text=I want to order Turmeric Powder" class="btn btn-outline" style="width: 100%; padding: 10px;">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="spice-animation-wrapper chilli-anim">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1596472718361-9c17eeb8fa6e?auto=format&fit=crop&w=300&q=80" alt="Red Chilli Powder">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Red Chilli Powder</h3>
+                        <p class="product-desc">Perfect balance of fiery heat and natural deep red color. Ground from premium dried chillies.</p>
+                        <div class="product-weights">
+                            <span class="weight-badge">100g</span>
+                            <span class="weight-badge">500g</span>
+                            <span class="weight-badge">1kg</span>
+                        </div>
+                        <a href="https://wa.me/919474090441?text=I want to order Red Chilli Powder" class="btn btn-outline" style="width: 100%; padding: 10px;">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="spice-animation-wrapper jeera-anim">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1582281292023-eb92b77d6ea0?auto=format&fit=crop&w=300&q=80" alt="Jeera Powder">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Jeera Powder</h3>
+                        <p class="product-desc">Earthy, robust, and highly aromatic. Roasted perfectly before grinding to release maximum flavor.</p>
+                        <div class="product-weights">
+                            <span class="weight-badge">100g</span>
+                            <span class="weight-badge">250g</span>
+                            <span class="weight-badge">500g</span>
+                        </div>
+                        <a href="https://wa.me/919474090441?text=I want to order Jeera Powder" class="btn btn-outline" style="width: 100%; padding: 10px;">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="spice-animation-wrapper dhaniya-anim">
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1629166898711-d07f7c6e6123?auto=format&fit=crop&w=300&q=80" alt="Dhaniya Powder">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Dhaniya Powder</h3>
+                        <p class="product-desc">Freshly ground from pale green, crisp coriander seeds. Adds a refreshing and cooling taste to curries.</p>
+                        <div class="product-weights">
+                            <span class="weight-badge">100g</span>
+                            <span class="weight-badge">500g</span>
+                            <span class="weight-badge">1kg</span>
+                        </div>
+                        <a href="https://wa.me/919474090441?text=I want to order Dhaniya Powder" class="btn btn-outline" style="width: 100%; padding: 10px;">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why" class="section-padding reveal">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Why Kalpataru?</h2>
+                <p class="section-subtitle">What sets our milled spices apart from supermarket brands.</p>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                    <div class="why-content">
+                        <h3>Zero Adulteration</h3>
+                        <p>We guarantee absolutely no sawdust, brick powder, or artificial colorants in our spices. 100% purity you can trust.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                    <div class="why-content">
+                        <h3>Slow Cold-Grinding</h3>
+                        <p>High heat destroys spice flavor. Our traditional slow chakkis keep temperatures low, preserving essential natural oils.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <div class="why-content">
+                        <h3>Aroma-Lock Packing</h3>
+                        <p>Packed immediately after grinding in food-grade materials to ensure the aroma stays intact until it reaches your kitchen.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <div class="why-content">
+                        <h3>Hand-Sorted Raw Material</h3>
+                        <p>Every batch of whole spices is manually inspected and cleaned to remove stones and impurities before milling.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="why-content">
+                        <h3>FSSAI Certified</h3>
+                        <p>We strictly adhere to food safety regulations (FSSAI No: 22824021000282) ensuring complete hygiene.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <div class="why-content">
+                        <h3>Mill to Kitchen</h3>
+                        <p>No warehouses, no old stock. We grind based on demand so you get the freshest possible product delivered.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding steps-bg reveal">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">How to Order</h2>
+                <p class="section-subtitle">Simple 3-step process — from our mill to your home.</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div>
+                    <div class="step-circle">1</div>
+                    <h3 class="step-title">Choose Your Spices</h3>
+                    <p class="step-desc">Select the spices and the quantities (100g, 500g, 1kg) you need for your kitchen.</p>
+                </div>
+                <div>
+                    <div class="step-circle">2</div>
+                    <h3 class="step-title">Message on WhatsApp</h3>
+                    <p class="step-desc">Click the WhatsApp button and send us your list along with your delivery address.</p>
+                </div>
+                <div>
+                    <div class="step-circle">3</div>
+                    <h3 class="step-title">Receive Fresh Delivery</h3>
+                    <p class="step-desc">We grind, pack, and dispatch your order swiftly. Pay via Cash or UPI upon delivery.</p>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="https://wa.me/919474090441" class="btn btn-primary" style="background: white; color: var(--dark-green); font-weight: bold;">Place Your Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="section-padding products-bg reveal">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Join hundreds of happy families who trust Kalpataru.</p>
+            </div>
+            
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Very fresh aroma and authentic taste. The turmeric quality is excellent."</p>
+                    <p class="reviewer">- Anjali S., Siliguri</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Much better than regular packet spices from supermarkets."</p>
+                    <p class="reviewer">- Rakesh M., Kolkata</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                    <p class="review-text">"Fast delivery and pure quality. The chilli powder color is completely natural."</p>
+                    <p class="reviewer">- Priya D., Jalpaiguri</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding reveal">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Got questions? We have answers.</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fa-solid fa-circle-question"></i> Are there any added colors in your spices?</div>
+                    <div class="faq-a">Absolutely not. The vibrant colors of our Turmeric and Red Chilli come naturally from sourcing high-quality raw ingredients. We strictly prohibit artificial dyes.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fa-solid fa-circle-question"></i> What is the shelf life of your milled spices?</div>
+                    <div class="faq-a">For maximum freshness and aroma, we recommend using our spices within 6 to 9 months of purchase. Store them in an airtight container away from direct sunlight.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fa-solid fa-circle-question"></i> Do you deliver outside Siliguri?</div>
+                    <div class="faq-a">Currently, we focus on local deliveries in and around Siliguri to ensure freshness, but we are expanding our logistics. Please message us on WhatsApp with your pin code to confirm!</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><i class="fa-solid fa-circle-question"></i> Do you offer bulk pricing for restaurants/caterers?</div>
+                    <div class="faq-a">Yes! We provide special pricing for bulk orders. Please call us directly to discuss wholesale requirements.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer reveal">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img loading="lazy" src="kalpataru-logo.png" alt="Kalpataru Logo" class="footer-logo">
+                    <p class="footer-desc">Providing 100% pure, unadulterated, and factory-fresh spices directly from our mill to your kitchen.</p>
+                    <p style="color: #888; font-size: 0.9rem;"><strong>FSSAI No:</strong> 22824021000282</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Our Spices</a></li>
+                        <li><a href="#why">Why Choose Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="openModal('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="openModal('terms')">Terms & Conditions</a></li>
+                        <li><a onclick="openModal('refund')">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact Us</h4>
+                    <div class="contact-info">
+                        <p><i class="fa-solid fa-location-dot"></i> <a href="https://maps.app.goo.gl/XsNSuyb9sFKyUF4x6" target="_blank">Preetilata Rd, Siliguri, West Bengal</a></p>
+                        <p><i class="fa-solid fa-phone"></i> +91 94740 90441</p>
+                        <p><i class="fa-solid fa-envelope"></i> kalpatarumill@email.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919474090441"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-logo-center">
+                <img loading="lazy" src="kalpataru-logo.png" alt="Kalpataru Footer Brand Logo">
+            </div>
+            
+            <div class="footer-bottom">
+                © 2026 Kalpataru Atta Mill. All Rights Reserved.<br>Traditional Purity • Authentic Taste • Factory Fresh
+            </div>
+        </div>
+    </footer>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/919474090441" class="floating-whatsapp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Modal Logic
+        function openModal(type) {
+            const body = document.getElementById('modalBody');
+            if(type === 'privacy') {
+                body.innerHTML = `
+                    <h2>Privacy Policy</h2>
+                    <h4>1. Data Collection Framework</h4>
+                    <p>In full compliance with the Information Technology Act, 2000, <strong>Kalpataru Atta Mill</strong> collects essential personal identification data including names, contact phone numbers, and physical shipping addresses to facilitate seamless business functions.</p>
+                    <h4>2. Core Purpose of Processing</h4>
+                    <p>The information we collect is strictly applied to process processing requests, arrange dynamic mill deliveries across local Siliguri routes, and communicate product status notifications natively through the WhatsApp interface.</p>
+                    <h4>3. Data Security & Storage Controls</h4>
+                    <p>Your records are secured within encrypted databases with zero exposure to unverified staff. We enforce rigid internal protocols ensuring your details are never exposed, traded, or shared with third-party marketing companies.</p>
+                    <h4>4. Cookie and Track Usage</h4>
+                    <p>Our landing structure utilizes lightweight, non-invasive temporary technical cookies solely to improve browsing speeds, maintain structure loading profiles, and gather completely anonymous operational performance data.</p>
+                    <h4>5. User Rights and Erasure</h4>
+                    <p>Under Indian digital data security mandates, all consumers retain absolute transparency options regarding their files. You may formally submit requests at any time to modify, view, or completely erase your registration address records from our mill log archives.</p>
+                `;
+            } else if(type === 'terms') {
+                body.innerHTML = `
+                    <h2>Terms & Conditions</h2>
+                    <h4>1. Absolute Purity Guarantees</h4>
+                    <p><strong>Kalpataru Atta Mill</strong> binds our operations to strict absolute purity specifications. In alignment with Consumer Protection rules, we declare our production lots entirely free from commercial starch bulk agents, dye substances, or wood dust residues.</p>
+                    <h4>2. WhatsApp Routing and Communications</h4>
+                    <p>Our digital infrastructure leverages standard WhatsApp messaging pipelines to coordinate ordering agreements. By dispatching a transaction query, you acknowledge that prices, dispatch metrics, and logistics details are dynamically locked through those chat streams.</p>
+                    <h4>3. Local Shipping and Boundaries</h4>
+                    <p>Milling processing runs are dispatched inside a typical twenty-four to forty-eight hour window. Distribution runs remain limited to structured zones within Siliguri and adjacent drop zones based on current logistics capabilities.</p>
+                    <h4>4. Payment Protocols and Settlements</h4>
+                    <p>We accept standard immediate transaction mechanisms including local Cash on Delivery (COD) and approved instant interface UPI online payment apps. Goods are transferred to customer possession exclusively upon complete balance settlement verification.</p>
+                    <h4>5. Strict Transit Damage Accountability</h4>
+                    <p>Replacement considerations are exclusively evaluated for logistics package failures. Any discrepancies must be submitted directly to our review team within twenty-four hours of official signature arrival, alongside complete high-definition photographs.</p>
+                    <h4>6. Legal Scope and Jurisdiction</h4>
+                    <p>These trade agreements remain defined under state and central business laws of India. Any unresolved corporate disputes or statutory contestations remain strictly restricted to the exclusive jurisdiction of regulatory courts in Siliguri, West Bengal.</p>
+                `;
+            } else {
+                body.innerHTML = `
+                    <h2>Refund & Cancellation</h2>
+                    <h4>1. Cancellations</h4>
+                    <p>Orders can be cancelled prior to dispatch. Once dispatched, cancellations are not permitted.</p>
+                    <h4>2. Returns</h4>
+                    <p>Due to the consumable nature of spices, we only accept returns if the package arrives damaged. Please provide photo evidence within 24 hours of delivery.</p>
+                `;
+            }
+            document.getElementById('infoModal').style.display = "block";
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() { 
+            document.getElementById('infoModal').style.display = "none"; 
+            document.body.style.overflow = 'auto'; 
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('infoModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show-menu');
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach((element) => {
+                const top = element.getBoundingClientRect().top;
+                if(top < window.innerHeight - 80) {
+                    element.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+</html>

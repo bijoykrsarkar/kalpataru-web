@@ -1,0 +1,211 @@
+/* --- Global Styles --- */
+:root {
+    /* Color Palette derived from branding */
+    --primary-red: #C42A1C;    /* Bulk button */
+    --primary-green: #1B5E20;  /* Contact button */
+    --primary-gold: #E86C00;   /* Explore button */
+    --text-dark: #333333;
+    --text-light: #666666;
+    --bg-cream: #FDFBF7;
+    
+    /* Fonts */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--bg-cream);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Header --- */
+.main-header {
+    padding: 20px 0;
+    text-align: center; /* Center logo on mobile */
+}
+
+.logo {
+    max-height: 80px; /* Adjust based on your logo image */
+    width: auto;
+}
+
+/* --- Hero Section --- */
+.hero {
+    /* Background Image setup */
+    background-image: linear-gradient(rgba(253, 251, 247, 0.9), rgba(253, 251, 247, 0.8)), 
+                      url('hero-spices-bg.jpg'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem; /* Mobile first size */
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+/* --- Buttons --- */
+.hero-btns {
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    gap: 15px;
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 300px; /* Limit width on mobile */
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--primary-red);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #A32217;
+}
+
+.btn-secondary {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #144517;
+}
+
+.btn-tertiary {
+    background-color: var(--primary-gold);
+    color: white;
+}
+
+.btn-tertiary:hover {
+    background-color: #C65C00;
+}
+
+/* --- Trust Signals --- */
+.trust-signals {
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    gap: 20px;
+    width: 100%;
+}
+
+.signal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.signal-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.signal-item span {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* --- Responsive Media Queries --- */
+
+/* Tablet and Up */
+@media (min-width: 768px) {
+    .main-header {
+        text-align: left; /* Logo left on desktop */
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-btns {
+        flex-direction: row; /* Horizontal buttons */
+        max-width: none;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .trust-signals {
+        flex-direction: row; /* Horizontal signals */
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .signal-item {
+        flex: 1;
+        max-width: 250px;
+    }
+}
+/* Animation Keyframes */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Spice Icon Styles */
+.spice-grid { display: flex; justify-content: center; gap: 40px; margin-top: 30px; }
+.spice-item { text-align: center; font-size: 2rem; }
+.spice-icon { font-size: 50px; cursor: pointer; display: inline-block; }
+
+/* Applying Animations */
+.chili-anim { animation: bounce 2s infinite ease-in-out; }
+.turmeric-anim { animation: spin 4s linear infinite; }
+.coriander-anim { animation: pulse 2s infinite ease-in-out; }
